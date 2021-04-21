@@ -14,7 +14,7 @@ You can quickly setup your MLflow on-premises environment with this example.
 
 2. Make a folder to store artifacts.
 
-    Edit `.env` if you want to change folder, it's `/tmp/artifacts` by default.
+    Edit `.env` if you want to change folder. (`/tmp/artifacts` by default. "artifacts" will be stored there the directory.)
 
     ```sh
     mkdir /tmp/artifacts
@@ -28,7 +28,7 @@ You can quickly setup your MLflow on-premises environment with this example.
 
 4. Confirm your server is running properly.
 
-    Open server URI. It's `http://your-server-ip-or-host-name:5000/`.
+    Open server URI by `http://localhost:5000/`.
 
     Now let's run an example, this will run for all convinations of `alpha` and `l1_ratio` parameters.
 
@@ -88,3 +88,7 @@ Following will clean up cache.
 ```sh
 docker system prune -a
 ```
+
+## Caveat
+
+- We're encountering a bug (https://github.com/mlflow/mlflow/issues/4208) on MLflow 1.15.0 so that we should install a fixed-versioning MLflow server to boot the server correctly. The bug is planning to be fixed in 1.15.1, but not released yet.
